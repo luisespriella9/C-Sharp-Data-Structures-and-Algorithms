@@ -63,22 +63,10 @@ public class LinkedList
     public void Remove(int value)
     {
         ListNode pointer = head;
-        if (pointer.value == 0)
+        if (pointer.value == value)
         {
-            return;
-        }
-        while (pointer != null)
-        {
-            //Check if head needs to be removed and traverse linked list until head is not equal to removed value
-            if (pointer.value == value)
-            {
-                head = pointer.next;
-                pointer = pointer.next;
-            }
-            else
-            {
-                break;
-            }
+            //if head contains value
+            head = head.next;
         }
         while (pointer != null)
         {
