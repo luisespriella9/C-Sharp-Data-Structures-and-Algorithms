@@ -1,13 +1,13 @@
-public class ListNode
+public class ListNode<T>
 {
-    public int value;
-    public ListNode next;
+    public T value;
+    public ListNode<T> next;
     /// <summary>
     /// Constructor, takes in value and next
     /// </summary>
     /// <param name="value"></param>
     /// <param name="next"></param>
-    public ListNode(int value, ListNode next)
+    public ListNode(T value, ListNode<T> next)
     {
         this.value = value;
         this.next = next;
@@ -16,7 +16,7 @@ public class ListNode
     /// Constructor, takes in value
     /// </summary>
     /// <param name="value"></param>
-    public ListNode(int value)
+    public ListNode(T value)
     {
         this.value = value;
         this.next = null;
@@ -26,7 +26,7 @@ public class ListNode
     /// </summary>
     public ListNode()
     {
-        this.value = 0;
+        this.value = default;
         this.next = null;
     }
 }

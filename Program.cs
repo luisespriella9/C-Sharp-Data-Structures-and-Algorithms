@@ -10,7 +10,7 @@ namespace Data_Structures_and_Algorithms
         static void Main()
         {
             Console.WriteLine("Testing Linked List");
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
             list.InsertAtTail(5);
             list.InsertAtTail(8);
             list.InsertAtTail(12);

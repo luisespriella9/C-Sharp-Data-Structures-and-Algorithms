@@ -1,13 +1,13 @@
-public class StackNode
+public class StackNode<T>
 {
-    public int value;
-    public StackNode next;
+    public T value;
+    public StackNode<T> next;
     /// <summary>
     /// Constructor, takes in value and next
     /// </summary>
     /// <param name="value"></param>
     /// <param name="next"></param>
-    public StackNode(int value, StackNode next)
+    public StackNode(T value, StackNode<T> next)
     {
         this.value = value;
         this.next = next;
@@ -16,7 +16,7 @@ public class StackNode
     /// Constructor, takes in value
     /// </summary>
     /// <param name="value"></param>
-    public StackNode(int value)
+    public StackNode(T value)
     {
         this.value = value;
         this.next = null;
@@ -26,7 +26,7 @@ public class StackNode
     /// </summary>
     public StackNode()
     {
-        this.value = 0;
+        this.value = default;
         this.next = null;
     }
 }

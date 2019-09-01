@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-
-public class LinkedList
+public class LinkedList<T>
 {
-    public ListNode head;
-    public ListNode tail;
+    public ListNode<T> head;
+    public ListNode<T> tail;
     /// <summary>
     /// Constructor, takes in Linked List head
     /// </summary>
     /// <param name="head"></param>
-    public LinkedList(ListNode node)
+    public LinkedList(ListNode<T> node)
     {
         head = node;
         tail = head;
@@ -26,9 +23,9 @@ public class LinkedList
     /// Adds node to beginning of the linked list
     /// </summary>
     /// <param name="value"></param>
-    public void AddFirst(int value)
+    public void AddFirst(T value)
     {
-        ListNode newHead = new ListNode(value, head);
+        ListNode<T> newHead = new ListNode<T>(value, head);
         if (head == null)
         {
             tail = newHead;
@@ -39,9 +36,9 @@ public class LinkedList
     /// Adds node to the end of linked list
     /// </summary>
     /// <param name="value"></param>
-    public void InsertAtTail(int value)
+    public void InsertAtTail(T value)
     {
-        ListNode node = new ListNode(value);
+        ListNode<T> node = new ListNode<T>(value);
         if (tail!=null)
         {
             tail.next = node;
@@ -60,10 +57,10 @@ public class LinkedList
     /// </summary>
     /// <param name="index"></param>
     /// <returns></returns>
-    public void Remove(int value)
+    public void Remove(T value)
     {
-        ListNode pointer = head;
-        if (pointer.value == value)
+        ListNode<T> pointer = head;
+        if (pointer.value.Equals(value))
         {
             //if head contains value
             head = head.next;
@@ -72,7 +69,7 @@ public class LinkedList
         {
             if (pointer.next != null)
             {
-                if (pointer.next.value == value)
+                if (pointer.next.value.Equals(value))
                 {
                     pointer.next = pointer.next.next;
                 }
@@ -87,7 +84,7 @@ public class LinkedList
     public string Values()
     {
         string result = "";
-        ListNode pointer = head;
+        ListNode<T> pointer = head;
         while (pointer != null)
         {
             result = result + pointer.value.ToString() + " -> ";
@@ -103,7 +100,7 @@ public class LinkedList
     public int Size()
     {
         int count = 0;
-        ListNode pointer = head;
+        ListNode<T> pointer = head;
         while (pointer != null)
         {
             count += 1;
