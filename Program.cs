@@ -39,6 +39,30 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("pop");
             stack.Pop();
             Console.WriteLine("stack: " + stack.PrintStack().ToString());
+
+            //Test Queue
+            Console.WriteLine("Testing Queue");
+            Queue<string> queue = new Queue<string>();
+            Console.WriteLine("removing first queue value");
+            queue.Remove();
+            Console.WriteLine("adding otherside");
+            queue.Add("otherside");
+            Console.WriteLine("adding too far gone");
+            queue.Add("too far gone");
+            Console.WriteLine("queue: " + queue.PrintQueue().ToString());
+            Console.WriteLine("removing first queue value");
+            queue.Remove();
+            Console.WriteLine("queue: " + queue.PrintQueue().ToString());
+            Console.WriteLine("adding Stairway to heaven");
+            queue.Add("Stairway to heaven");
+            Console.WriteLine("queue: " + queue.PrintQueue().ToString());
+            Console.WriteLine("removing first queue value");
+            queue.Remove();
+            Console.WriteLine("removing first queue value");
+            queue.Remove();
+            Console.WriteLine("removing first queue value");
+            queue.Remove();
+            Console.WriteLine("queue: " + queue.PrintQueue().ToString());
         }
     }
 }
