@@ -1,11 +1,11 @@
 public class Stack<T>
 {
-    public StackNode<T> top;
+    public ListNode<T> top;
     /// <summary>
     /// Constructor, takes in Linked List head
     /// </summary>
     /// <param name="head"></param>
-    public Stack(StackNode<T> node)
+    public Stack(ListNode<T> node)
     {
         top = node;
     }
@@ -22,7 +22,7 @@ public class Stack<T>
     /// <param name="value"></param>
     public void Push(T value)
     {
-        StackNode<T> node = new StackNode<T>(value);
+        ListNode<T> node = new ListNode<T>(value);
         if (top != default)
         {
             node.next = top;
@@ -30,7 +30,7 @@ public class Stack<T>
         top = node;
     }
     /// <summary>
-    /// removes top value from stack
+    /// removes top value from stack. If empty returns default data type value (ex: null, 0, etc)
     /// </summary>
     /// <returns></returns>
     public T Pop()
@@ -44,7 +44,7 @@ public class Stack<T>
         return topValue;
     }
     /// <summary>
-    /// returns top value of the stack
+    /// returns top value of the stack. If empty returns default data type value (ex: ynull, 0, etc)
     /// </summary>
     /// <returns></returns>
     public T Peek()
@@ -65,7 +65,7 @@ public class Stack<T>
     }
     public string PrintStack()
     {
-        StackNode<T>  pointer = top;
+        ListNode<T>  pointer = top;
         string result = "";
         while (pointer != default)
         {
